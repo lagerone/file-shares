@@ -1,0 +1,39 @@
+{
+  "name": "tennis-videos",
+  "version": "0.0.0",
+  "description": "A webserver",
+  "scripts": {
+    "start": "nodemon",
+    "start:run": "ts-node ./src/server.ts",
+    "start:build": "node ./dist/server.js",
+    "build": "rm -rf dist && tsc"
+  },
+  "author": "Daniel Lager <daniel.lager@gmail.com> (https://github.com/lagerone)",
+  "private": true,
+  "license": "NONE",
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/compression": "^1.7.0",
+    "@types/express": "^4.17.8",
+    "@types/fluent-ffmpeg": "^2.1.15",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/node": "^14.11.2",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2",
+    "ts-jest": "^26.4.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "express-winston": "^4.0.5",
+    "fluent-ffmpeg": "^2.1.2",
+    "http-status-codes": "^2.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "winston": "^3.3.3"
+  }
+}

@@ -1,0 +1,21 @@
+[Unit]
+Description=file-shares webserver
+After=network.target
+StartLimitBurst=5
+StartLimitIntervalSec=10
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /home/pi/www/shares.lagr.se/server/server.js
+Restart=always
+RestartSec=3
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=shares.lagr.se
+User=pi
+Group=pi
+Environment=NODE_ENV=production
+Environment=NODE_PORT=4100
+
+[Install]
+WantedBy=multi-user.target
