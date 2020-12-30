@@ -7,7 +7,7 @@ async function getDownloads() {
     method: 'GET',
     headers: new Headers({
       'content-type': 'application/json',
-      authorization: `Bearer ${localStorage.getItem('token')}`,
+      authorization: `Bearer ${token}`,
     }),
   });
   const { files } = await response.json();

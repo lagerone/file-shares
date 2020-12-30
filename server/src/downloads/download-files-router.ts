@@ -4,7 +4,9 @@ import HttpStatusCodes from 'http-status-codes';
 import jwt from 'jsonwebtoken';
 import config from '../config';
 import { logger } from '../logger';
+import { User } from '../login/login-api-router';
 import { getFilepathById } from './file-service';
+import { addDownloadStat } from './stats-service';
 
 const downloadFilesRouter = Router();
 
@@ -18,7 +20,8 @@ downloadFilesRouter.get(
       return;
     }
     try {
-      jwt.verify(req.params.token, config.jwtSecret);
+      const jwtPayload = jwt.verify(req.params.token, config.jwtSecret) as User;
+      addDownloadStat(jwtPayload.username, filepath);
       res.download(filepath);
     } catch (error) {
       logger.error(error);
