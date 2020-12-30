@@ -16,6 +16,8 @@ User=pi
 Group=pi
 Environment=NODE_ENV=production
 Environment=NODE_PORT=4100
+Environment=JWT_SECRET=dc644d75-ffee-46ba-9332-ee8cda89eefd
+Environment=STATIC_FILES_PATH=/home/pi/www/shares.lagr.se/server/public
 
 [Install]
 WantedBy=multi-user.target

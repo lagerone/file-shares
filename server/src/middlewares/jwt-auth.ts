@@ -21,16 +21,6 @@ export const jwtAuth = () => {
       return;
     }
 
-    // The token is valid for 1 year.
-    // TODO: Send a new token on every request, e.g.
-    // ```
-    //   const { userId, username } = jwtPayload;
-    //   const newToken = jwt.sign({ userId, username }, config.jwtSecret, {
-    //     expiresIn: '1y', // 1h
-    //   });
-    //   res.setHeader('token', newToken);
-    // ```
-
     next();
   };
 };

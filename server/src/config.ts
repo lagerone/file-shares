@@ -1,22 +1,17 @@
-
 interface WebConfig {
   readonly httpPort: string;
   readonly staticFilesPath: string;
-  readonly sharedVideoFilesPath: string;
   readonly jwtSecret: string;
+  readonly isProduction: boolean;
 }
+
+const isProduction = process.env.NODE_ENV === 'production';
 
 const config: WebConfig = {
   httpPort: process.env.NODE_PORT || '',
-  staticFilesPath:
-    process.env.NODE_ENV === 'production'
-      ? '/home/pi/www/shares.lagr.se/server/public'
-      : '/home/daniel/repos-private/file-shares/server/public',
-  sharedVideoFilesPath:
-    process.env.NODE_ENV === 'production'
-      ? '/mounts/Extracted'
-      : process.env.DEV_VIDEOS_PATH || '',
+  staticFilesPath: process.env.STATIC_FILES_PATH || '',
   jwtSecret: process.env.JWT_SECRET || '',
+  isProduction,
 };
 
 export default config;

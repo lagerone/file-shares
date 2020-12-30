@@ -18,6 +18,21 @@ function getUserByUsernameAndPassword(
       id: '9d0257c8-3e52-43e0-949e-3eb042796fe2',
     };
   }
+  if (username === 'jolly' && password === 'jolly123') {
+    return {
+      id: '24312f1d-a174-40eb-8244-12b8b09636cf',
+    };
+  }
+  if (username === 'mackan' && password === 'pruttapa') {
+    return {
+      id: 'a6ff762a-947b-4af2-a1e0-7f9ceb3b9b53',
+    };
+  }
+  if (username === 'miapia' && password === 'milo') {
+    return {
+      id: '5e1b1fe6-b234-4718-bc27-a4c84168fc6d',
+    };
+  }
   return null;
 }
 
